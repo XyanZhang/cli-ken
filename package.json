@@ -1,0 +1,15 @@
+{
+  "name": "cli-ken",
+  "version": "1.0.0",
+  "description": "cli util",
+  "main": "index.js",
+  "bin": {
+    "cli-ken": "bin/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
