@@ -23,3 +23,25 @@ cli util
 
 + 安装脚手架 `npm i -g <package-name>`
 + 使用脚手架 `<package-name> <command>`
+
+## 难点
+
+### 分包
+
+### 命令注册
+
+### 参数解析
+
+`vue command [options] <params>`
+
+### 帮助文档
+
+### 命令行交互
+
+### 日志打印
+
+### 命令行文字变色
+
+### 网络通信
+
+### 文件处理
