@@ -1,0 +1,9 @@
+lockfileVersion: 5.4
+
+importers:
+
+  packages/cli:
+    specifiers:
+      '@cli-ken/init': ^1.0.0
+    dependencies:
+      '@cli-ken/init': link:../init
