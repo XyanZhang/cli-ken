@@ -8,3 +8,18 @@ cli util
 + 再在另外一个包中 `npm link <package-name>`
 
 取消link: `npm unlink <package-name>`
+
+## 脚手架开发流程
+
+### 开发流程
+
++ 创建 npm 项目
++ 创建脚手架入口文件，文件最上方添加`#!/usr/bin/env node`
++ 在package.json中配置bin字段，指向入口文件
++ 编写脚手架代码
++ 将脚手架发布到npm
+
+### 使用
+
++ 安装脚手架 `npm i -g <package-name>`
++ 使用脚手架 `<package-name> <command>`
