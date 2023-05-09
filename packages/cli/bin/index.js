@@ -13,9 +13,12 @@ const agrv = require('process').argv;
 let command = agrv[2];
 console.log(command);
 if(command) {
-  command = command.replace('--', '');
+  // command = command.replace('--', '');
   if(lib[command]) {
-    lib[command](agrv[3]); // 根据参数执行命令
+    let options = agrv.slice(3);
+    const [option, param] = options;
+    let option2 = option.replace('--', '');
+    lib[command](option2, param); // 根据参数执行命令
     // ken-cli init hello
     // 打印 I'm init ken from init hello
   }else {

@@ -1,6 +1,6 @@
 
 module.exports = {
-  init(params) {
-    console.log('I\'m init ken from init', params)
+  init(option, param) {
+    console.log('I\'m init ken from init', option, param)
   }
 }
