@@ -21,8 +21,8 @@ const argv = yargs(arg)
     console.log(argv);
     console.log(`hello ${argv.name}`);
   })
-  .help()
-  .argv;
+  .help() // 显示帮助信息, 命令行中输入 --help 显示
+  .argv; // 这里的argv是一个对象，包含了命令行中的参数
 
 // 测试 在控制台运行 node "d:\code\project\cli-ken\packages\useYargs\index.js" hello -n ken
 
