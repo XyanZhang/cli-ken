@@ -8,9 +8,24 @@ const arg = hideBin(process.argv); // 隐藏命令中的node和文件名
 
 console.log(arg);
 
-yargs(arg)
-  .usage('Usage: ken-cli2 <command> [options]')
-  .strict()
+// 写一个demo command
+const argv = yargs(arg)
+  .command('hello', 'hello command', (yargs) => {
+    yargs.option('name', {
+      alias: 'n',
+      describe: 'your name',
+      type: 'string',
+      demandOption: true, // 必须的
+    })
+  }, (argv) => {
+    console.log(argv);
+    console.log(`hello ${argv.name}`);
+  })
+  .help()
+  .argv;
+
+// 测试 在控制台运行 node "d:\code\project\cli-ken\packages\useYargs\index.js" hello -n ken
+
 
 // yargs.command(command, desc, builder, handler)：定义一个命令，参数依次为命令名、命令描述、命令参数配置、命令处理函数。
 
