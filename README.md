@@ -47,3 +47,13 @@ cli util
 ### 文件处理
 
 ### 尝试yargs 进行脚手架快速开发
+
+### yargs 常用api
+
+yargs.command(command, desc, builder, handler)：定义一个命令，参数依次为命令名、命令描述、命令参数配置、命令处理函数。
+yargs.option(key, options)：定义一个命令行选项，参数依次为选项名和选项配置。
+yargs.alias(key, alias)：为一个选项定义一个别名。
+yargs.usage(usage)：定义命令的使用说明。
+yargs.help()：输出命令的帮助信息。
+yargs.version(version)：定义命令的版本号。
+yargs.argv：解析命令行参数，返回一个包含所有选项和参数的对象。
