@@ -2,7 +2,7 @@
   "name": "@cli-ken/cli",
   "version": "1.0.0",
   "description": "",
-  "main": "bin/index.js",
+  "main": "lib/index.js",
   "type": "module",
   "bin": {
     "ken-cli": "bin/index.js"

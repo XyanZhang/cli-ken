@@ -1,6 +1,8 @@
 import { createCli } from './createCli.js';
+import createInitCommand from '@cli-ken/init'
 import './exception.js';
 
 export default function cliEntry() {
-  createCli();
+  let program = createCli();
+  createInitCommand(program);
 };

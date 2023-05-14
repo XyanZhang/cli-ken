@@ -1,6 +1,4 @@
 
-module.exports = {
-  init(option, param) {
-    console.log('I\'m init ken from init', option, param)
-  }
+export default function createInitCommand(program) {
+  console.log('createInitCommand');
 }

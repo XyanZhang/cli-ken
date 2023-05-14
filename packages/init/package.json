@@ -2,5 +2,6 @@
   "name": "@cli-ken/init",
   "version": "1.0.0",
   "main": "lib/index.js",
+  "type": "module",
   "license": "MIT"
 }
