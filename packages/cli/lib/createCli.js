@@ -4,18 +4,19 @@ import { dirname } from 'dirname-filename-esm';
 import semver from 'semver';
 import chalk from 'chalk';
 import fse from 'fs-extra';
-import   {log } from '@cli-ken/utils';
+import { log } from '@cli-ken/utils';
 
 const __dirname = dirname(import.meta);
 const pkgPath = path.resolve(__dirname, '../package.json');
 const pkg = fse.readJsonSync(pkgPath);
-
 const LOWEST_NODE_VERSION = '14.0.0';
 
 function checkNodeVersion() {
   log.verbose('node version', process.version);
   if (!semver.gte(process.version, LOWEST_NODE_VERSION)) {
-    throw new Error(chalk.red(`cli-ken 需要安装 ${LOWEST_NODE_VERSION} 以上版本的 Node.js`));
+    throw new Error(
+      chalk.red(`cli-ken 需要安装 ${LOWEST_NODE_VERSION} 以上版本的 Node.js`)
+    );
   }
 }
 
@@ -25,7 +26,7 @@ function preAction() {
 }
 
 export function createCli() {
-  log.info('version', pkg.version); 
+  log.info('version', pkg.version);
 
   program
     .name(Object.keys(pkg.bin)[0])
@@ -45,13 +46,14 @@ export function createCli() {
   // 3. postAction：在执行命令之后执行，比如打印一些信息。
 
   // program.on 用于监听事件，第一个参数是事件名称，第二个参数是事件回调函数。
-  program.on('option:debug', function() {
+  program.on('option:debug', function () {
     console.log(program.opts());
     if (program.opts().debug) {
       log.verbose('debug', 'launch debug mode');
     }
   });
 
+  // 表示 program 命令下的任何命令都会执行这个回调函数
   program.on('command:*', function(obj) {
     log.error('未知的命令：' + obj[0]);
   });

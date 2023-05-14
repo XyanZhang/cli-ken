@@ -1,31 +1,15 @@
-// #!/usr/bin/env node 
-// 表示用node执行该文件
+// #!/usr/bin/env node
 
-const lib = require('@cli-ken/init')
+import importLocal from 'import-local'; // 作用：如果本地安装了 cli-ken，就使用本地的 cli-ken，否则使用全局的 cli-ken
+import { log } from '@cli-ken/utils';
+import { filename } from 'dirname-filename-esm';
+import cliEntry from '../lib/index.js';
 
-// initM.init('hello');
-// console.log('I\'m cli ken')
+const __filename = filename(import.meta);
 
-// 注册一个命令 init
-const agrv = require('process').argv;
-// console.log(agrv);
-// 获取参数
-let command = agrv[2];
-console.log(command);
-if(command) {
-  // command = command.replace('--', '');
-  if(lib[command]) {
-    let options = agrv.slice(3);
-    const [option, param] = options;
-    let option2 = option.replace('--', '');
-    lib[command](option2, param); // 根据参数执行命令
-    // ken-cli init hello
-    // 打印 I'm init ken from init hello
-  }else {
-    console.log('command not found');
-  }
-}else {
-  console.log('no command');
+console.log('cli-ken', importLocal(__filename));
+if (importLocal(__filename)) {
+  log.info('cli', '使用本次 cli-ken 版本');
+} else {
+  cliEntry(process.argv.slice(2));
 }
-
-// 实现参数解析

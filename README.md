@@ -63,3 +63,13 @@ yargs.help()：输出命令的帮助信息。
 yargs.version(version)：定义命令的版本号。
 
 yargs.argv：解析命令行参数，返回一个包含所有选项和参数的对象。
+
+### commander 常用api
+
++ commander
+  + commander 和 yargs 都是 Node.js 的命令行参数解析库，它们的用法和 API 有一些不同。
+  + commander 是一个比较简单的命令行参数解析库，它的 API 比较少，主要包括：
+  + commander.version(version)：定义命令的版本号。
+  + commander.command(name, desc)：定义一个命令，参数依次为命令名和命令描述。
+  + commander.option(flags, desc)：定义一个命令行选项，参数依次为选项名和选项描述。
+  + commander.parse(process.argv)：解析命令行参数。
